@@ -1,5 +1,68 @@
+<!DOCTYPE html>
 <html>
-    <body>
-        <p>Serving up HTML</p>
-    </body>
+
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Style Sheets -->
+  <link rel="stylesheet" href="/lib/bootstrap.css">
+  <link rel="stylesheet" href="./lib/font-awesome.css">
+  <link rel="stylesheet" href="site.css">
+
+  <!-- Libs -->
+  <script type="text/javascript" src="/lib/jquery.js"></script>
+  <script type="text/javascript" src="/lib/bootstrap.bundle.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#"><span data-bind="text: appName">Demo</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link active" href="#sights">Sights </a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#sports">Sports </a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#activities">Activites </a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#contact-us">Contact Us </a> </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Contents -->
+  <div class="container-fluid">
+
+    <div class="row"> 
+   <h2>Start Here...</h2>
+    </div>
+
+    </div>
+  </div>
+  <script>
+   
+
+    //Acitve Link, Highlighting
+    $('.navbar-nav .nav-link').click(function () {
+      $('.navbar-nav .nav-link').removeClass('active');
+      $(this).addClass('active');
+    });
+
+  </script>
+  
+ 
+
+  <script type="text/javascript" src="app.js"></script>
+
+</body>
+
+
 </html>
