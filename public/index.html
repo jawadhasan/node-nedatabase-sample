@@ -39,17 +39,55 @@
   </nav>
 
   <!-- Page Contents -->
-  <div class="container-fluid">
+  <div class="container">
 
-    <div class="row"> 
-   <h2>Start Here...</h2>
+    <br />
+    
+    <div class="row">
+      <div class="col-md-6">
+        <form id="surveyForm">
+          <div class="form-group">
+           
+            <input type="email" class="form-control" id="emailId" aria-describedby="emailHelp"
+              placeholder="Enter email" required>          
+          </div>
+  
+          <hr />
+  
+          <div><h4>Do You Like Our Services?</h4></div>
+  
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="yes" checked>
+            <label class="form-check-label" for="exampleRadios1">
+              Yes
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="no">
+            <label class="form-check-label" for="exampleRadios2">
+              No
+            </label>
+          </div>
+          <div class="form-check disabled">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="none">
+            <label class="form-check-label" for="exampleRadios3">
+              None
+            </label>
+          </div>
+  
+          <hr />
+  
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-success" id='getAllSurvey'>Get Results</button>
+      </div>
     </div>
 
-    </div>
   </div>
-  <script>
-   
 
+  <script>
     //Acitve Link, Highlighting
     $('.navbar-nav .nav-link').click(function () {
       $('.navbar-nav .nav-link').removeClass('active');
@@ -57,8 +95,6 @@
     });
 
   </script>
-  
- 
 
   <script type="text/javascript" src="app.js"></script>
 
