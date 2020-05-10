@@ -25,6 +25,9 @@ $(document).ready(function () {
       data: JSON.stringify(formData),
       dataType: 'json',
       success: function (result) {
+        $("#postResultDiv").html("<p>" + 
+          "Post Successfully! <br>" +
+          "--->" + JSON.stringify(result)+ "</p>"); 
         console.log(result);
       },
       error: function (e) {
@@ -58,15 +61,14 @@ $(document).ready(function () {
       type : "GET",
       url : "api/survey/all",
       success: function(result){
-        // $('#getResultDiv ul').empty();
-        // var custList = "";
-        // $.each(result, function(i, customer){
-        //   $('#getResultDiv .list-group').append(customer.firstname + " " + customer.lastname + "<br>")
-        // });
+        $('#getResultDiv ul').empty();
+        $.each(result, function(i, survey){
+          $('#getResultDiv .list-group').append(survey.timestamp + " " + survey.emailAddress + " " + survey.surveyAnswer + "<br>")
+        });
         console.log("Success: ", result);
       },
       error : function(e) {
-        // $("#getResultDiv").html("<strong>Error</strong>");
+        $("#getResultDiv").html("<strong>Error</strong>");
         console.log("ERROR: ", e);
       }
     });  
