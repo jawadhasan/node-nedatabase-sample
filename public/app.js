@@ -75,4 +75,36 @@ $(document).ready(function () {
   }
 
 
+
+
+//GET LowDb Result
+getLowdbResultDiv
+$("#getAllSurveyLowdb").click(function(event){
+  event.preventDefault();
+  ajaxGetLowDb();
+});
+
+//DO Get LowDb
+function ajaxGetLowDb(){
+  $.ajax({
+    type : "GET",
+    url : "api/survey/allLowdb",
+    success: function(result){
+      $('#getLowdbResultDiv ul').empty();
+      $.each(result, function(i, survey){
+        $('#getLowdbResultDiv .list-group').append(survey.id + " " + survey.timestamp + " " + survey.emailAddress + " " + survey.surveyAnswer + "<br>")
+      });
+      console.log("Success: ", result);
+    },
+    error : function(e) {
+      $("#getLowdbResultDiv").html("<strong>Error</strong>");
+      console.log("ERROR: ", e);
+    }
+  }); 
+}
+
+
+
+
+
 });
