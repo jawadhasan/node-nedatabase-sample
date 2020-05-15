@@ -1,46 +1,34 @@
 {
   "surveyList": [
     {
-      "id": "V9bPlnkBV",
-      "timestamp": "2020-05-10T20:47:37.939Z",
-      "emailAddress": "jawadhasan80@gmail.com",
-      "surveyAnswer": "no"
+      "id": "p21LVq2-B",
+      "email": "n@b.com",
+      "answer": "no",
+      "timestamp": "2020-05-15T19:44:51.729Z"
     },
     {
-      "id": "r5UfA12rr",
-      "timestamp": "2020-05-10T20:48:33.035Z",
-      "emailAddress": "test@test.com",
-      "surveyAnswer": "none"
+      "id": "geove6zDT",
+      "email": "kk@bb.com",
+      "answer": "none",
+      "timestamp": "2020-05-15T19:46:03.631Z"
     },
     {
-      "id": "CNg6Hd4oS",
-      "timestamp": "2020-05-10T20:49:44.462Z",
-      "emailAddress": "k@l.com",
-      "surveyAnswer": "yes"
+      "id": "WGnlckkVg",
+      "email": "e@f.com",
+      "answer": "yes",
+      "timestamp": "2020-05-15T19:47:08.721Z"
     },
     {
-      "id": "tYILQbSBJ",
-      "timestamp": "2020-05-10T20:57:37.931Z",
-      "emailAddress": "jawadhasan80@gmail.com",
-      "surveyAnswer": "yes"
+      "id": "yg8xpwMX3",
+      "email": "k@l.com",
+      "answer": "no",
+      "timestamp": "2020-05-15T19:48:13.958Z"
     },
     {
-      "id": "SpWmd6hNt",
-      "timestamp": "2020-05-10T20:59:19.568Z",
-      "emailAddress": "k2@l.com",
-      "surveyAnswer": "none"
-    },
-    {
-      "id": "Ak1EkMvmu",
-      "timestamp": "2020-05-10T21:08:50.902Z",
-      "emailAddress": "k@l.com",
-      "surveyAnswer": "no"
-    },
-    {
-      "id": "W80r1AFDc",
-      "timestamp": "2020-05-10T21:09:46.335Z",
-      "emailAddress": "jawadhasan80@gmail.com",
-      "surveyAnswer": "yes"
+      "id": "yGKssSs-N",
+      "email": "k2@l.com",
+      "answer": "no",
+      "timestamp": "2020-05-15T20:45:45.707Z"
     }
   ]
 }

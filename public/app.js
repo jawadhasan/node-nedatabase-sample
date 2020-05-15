@@ -25,9 +25,9 @@ $(document).ready(function () {
       data: JSON.stringify(formData),
       dataType: 'json',
       success: function (result) {
-        $("#postResultDiv").html("<p>" + 
+        $("#postResultDiv").html("<p>" +
           "Post Successfully! <br>" +
-          "--->" + JSON.stringify(result)+ "</p>"); 
+          "--->" + JSON.stringify(result) + "</p>");
         console.log(result);
       },
       error: function (e) {
@@ -47,64 +47,47 @@ $(document).ready(function () {
     $('#exampleRadios1').prop('checked', true);;
   }
 
-
-
-  // GET REQUEST
-  $("#getAllSurvey").click(function(event){
+  // Button ClickEventHandlers
+  $("#getInMemory").click(function (event) {
     event.preventDefault();
-    ajaxGet();
+    ajaxGetInMemory();
   });
 
-  // DO GET
-  function ajaxGet(){
-    $.ajax({
-      type : "GET",
-      url : "api/survey/all",
-      success: function(result){
-        $('#getResultDiv ul').empty();
-        $.each(result, function(i, survey){
-          $('#getResultDiv .list-group').append(survey.timestamp + " " + survey.emailAddress + " " + survey.surveyAnswer + "<br>")
-        });
-        console.log("Success: ", result);
-      },
-      error : function(e) {
-        $("#getResultDiv").html("<strong>Error</strong>");
-        console.log("ERROR: ", e);
-      }
-    });  
+  $("#getAllSurveyLowdb").click(function (event) {
+    event.preventDefault();
+    ajaxGetLowDb();
+  });
+
+  // DO GET InMemory
+  function ajaxGetInMemory() {
+    ajaxService.getInMemory('survey').then(function (result) {
+      //success
+      $('#getResultDiv ul').empty();
+      $.each(result, function (i, survey) {
+        $('#getResultDiv .list-group').append(survey.id + " " + survey.timestamp + " " + survey.email + " " + survey.answer + "<br>")
+      });
+
+    }, function (e) {
+      $("#getResultDiv").html("<strong>Error</strong>");
+      console.log('ERROR', e);
+    });
+
+
   }
 
-
-
-
-//GET LowDb Result
-getLowdbResultDiv
-$("#getAllSurveyLowdb").click(function(event){
-  event.preventDefault();
-  ajaxGetLowDb();
-});
-
-//DO Get LowDb
-function ajaxGetLowDb(){
-  $.ajax({
-    type : "GET",
-    url : "api/survey/allLowdb",
-    success: function(result){
+  //DO Get LowDb
+  function ajaxGetLowDb() {
+    ajaxService.getAll('survey').then(function (result) {
+      //success
       $('#getLowdbResultDiv ul').empty();
-      $.each(result, function(i, survey){
-        $('#getLowdbResultDiv .list-group').append(survey.id + " " + survey.timestamp + " " + survey.emailAddress + " " + survey.surveyAnswer + "<br>")
+      $.each(result, function (i, survey) {
+        $('#getLowdbResultDiv .list-group').append(survey.id + " " + survey.timestamp + " " + survey.email + " " + survey.answer + "<br>")
       });
-      console.log("Success: ", result);
-    },
-    error : function(e) {
+
+    }, function (e) {
       $("#getLowdbResultDiv").html("<strong>Error</strong>");
-      console.log("ERROR: ", e);
-    }
-  }); 
-}
-
-
-
-
+      console.log('ERROR', e);
+    });
+  }
 
 });
